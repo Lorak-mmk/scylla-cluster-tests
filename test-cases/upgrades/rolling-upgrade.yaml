@@ -18,7 +18,7 @@ n_db_nodes: 4
 n_loaders: 1
 n_monitor_nodes: 1
 
-instance_type_db: 'i3.2xlarge'
+instance_type_db: 'i3.large'
 
 user_prefix: 'rolling-upgrade'
 
@@ -41,7 +41,7 @@ append_scylla_args: '--blocked-reactor-notify-ms 500 --abort-on-lsa-bad-alloc 1 
 
 use_mgmt: false
 
-gemini_cmd: "gemini -d --duration 2h \
+gemini_cmd: "gemini -d --duration 10m \
 -c 10 -m write -f --non-interactive --cql-features normal \
 --max-mutation-retries 5 --max-mutation-retries-backoff 500ms \
 --async-objects-stabilization-attempts 5 --async-objects-stabilization-backoff 500ms \
