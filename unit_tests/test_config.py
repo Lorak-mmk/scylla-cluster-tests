@@ -663,14 +663,14 @@ class ConfigurationTests(unittest.TestCase):  # pylint: disable=too-many-public-
                           'kcl': 'scylladb/hydra-loaders:kcl-jdk8-20210526-ShardSyncStrategyType-PERIODIC',
                           'harry': 'scylladb/hydra-loaders:cassandra-harry-jdk11-20220816',
                           'latte': 'scylladb/hydra-loaders:latte-rust1_73-20231025',
-                          'cql-stress-cassandra-stress': 'scylladb/hydra-loaders:cql-stress-cassandra-stress-20240119'})
+                          'cql-stress-cassandra-stress': 'karolbarylascylla/hydra-loaders:cql-stress-cassandra-stress-20240506'})
 
         self.assertEqual(conf.get('stress_image.gemini'), 'scylladb/hydra-loaders:gemini-v1.8.6')
         self.assertEqual(conf.get('stress_image.non-exist'), None)
 
         self.assertEqual(conf.get('stress_read_cmd'), ['cassandra_stress', 'cassandra_stress'])
 
-    def test_22_get_none(self):
+    def test_22_get_none(self):g
         os.environ['SCT_CLUSTER_BACKEND'] = 'aws'
         os.environ['SCT_CONFIG_FILES'] = "internal_test_data/minimal_test_case.yaml"
         os.environ['SCT_AMI_ID_DB_SCYLLA'] = 'ami-1234'
